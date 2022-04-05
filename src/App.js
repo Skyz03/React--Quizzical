@@ -1,16 +1,17 @@
 import React from "react";
 import "./App.scss";
+import Ques from "./components/Ques";
 function App() {
-  const [starWarsData, setStarWarsData] = React.useState({});
-  let showChar;
-
-  fetch("https://opentdb.com/api.php?amount=10&category=18&type=multiple")
-    .then((res) => res.json())
-    .then((data) => showChar(data.results));
-
-  console.log(showChar());
-
-  return <div className="App">{showChar}</div>;
+  return (
+    <div className="App">
+      <Ques />
+      <Ques />
+      <Ques />
+      <Ques />
+      <Ques />
+      <Ques />
+    </div>
+  );
 }
 
 export default App;

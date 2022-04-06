@@ -3,6 +3,7 @@ import "./App.scss";
 import Ques from "./components/Ques";
 function App() {
   const [question, setQuestion] = React.useState([]);
+  const [screen, setScreen] = React.useState(false);
 
   const fetchQuestion = () => {
     fetch("https://opentdb.com/api.php?amount=10&category=18&type=multiple")
@@ -28,7 +29,25 @@ function App() {
     );
   });
 
-  return <div className="App">{questionElement}</div>;
+  const handleClick = () => {
+    setScreen((prevState) => !prevState);
+  };
+
+  return (
+    <div className="App">
+      {screen ? (
+        questionElement
+      ) : (
+        <div className="loader">
+          <h1 className="loader__title">Quizzical</h1>
+          <p className="loader__para">Some description if needed</p>
+          <button className="loader__btn" onClick={handleClick}>
+            Start Quiz
+          </button>
+        </div>
+      )}
+    </div>
+  );
 }
 
 export default App;

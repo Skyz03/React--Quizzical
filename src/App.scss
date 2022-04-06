@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Karla:wght@300;400;500;600;700&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: #f5f7fb;
+  background-image: url(./images/yellow-blob.png), url(./images/blue-blob.png);
+  background-repeat: no-repeat, no-repeat;
+  background-position: top right, bottom left;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+
+  &__title {
+    color: #293264;
+    letter-spacing: 0.03em;
+    font-family: "Karla";
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 2.325rem;
+    text-align: center;
+  }
+
+  &__para {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    margin: 1.2rem 0 1.9rem;
+  }
+
+  &__btn {
+    cursor: pointer;
+    background: #4d5b9e;
+    border-radius: 1rem;
+    padding: 1rem 3.5rem;
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.2rem;
+    letter-spacing: 0.03em;
+    color: #f5f7fb;
+    border: 0;
+  }
+}

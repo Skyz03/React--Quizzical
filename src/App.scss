@@ -54,3 +54,55 @@ body {
     border: 0;
   }
 }
+
+.ques {
+  width: 80%;
+  margin: 0 auto;
+
+  &-container {
+    margin: 1.2rem 0;
+    padding: 1rem 0;
+    border-bottom: 0.794239px solid #dbdef0;
+  }
+
+  &__title {
+    font-family: "Karla";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 19px;
+    color: #293264;
+    margin-bottom: 0.9rem;
+  }
+
+  button {
+    font-family: "Inter";
+    font-weight: 500;
+    font-size: 0.7rem;
+    line-height: 12px;
+    letter-spacing: 0.05em;
+    color: #293264;
+    padding: 6px 20px;
+    border-radius: 10px;
+    border: 1px solid #293264;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 0.5rem 1rem;
+  }
+}
+
+.check_answer {
+  background: #4d5b9e;
+  border-radius: 10px;
+  padding: 10px 25px;
+  color: #fff;
+  border: none;
+  position: relative;
+  left: 45%;
+  margin: 1.8rem 0;
+  cursor: pointer;
+  font-family: "Inter";
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+}

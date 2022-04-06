@@ -36,7 +36,10 @@ function App() {
   return (
     <div className="App">
       {screen ? (
-        questionElement
+        <div>
+          {questionElement}
+          <button className="check_answer">Check Answers</button>
+        </div>
       ) : (
         <div className="loader">
           <h1 className="loader__title">Quizzical</h1>

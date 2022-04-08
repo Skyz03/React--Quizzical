@@ -1,17 +1,26 @@
 import React from "react";
 
 const Ques = (props) => {
-  const incorrect_answers = props.incorrect.map((incorrect) => {
-    return <button className="ques__option">{incorrect}</button>;
+  function shuffleArray() {
+    let array = [];
+    props.incorrect.map((incorrect) => {
+      array.push(incorrect);
+    });
+    array.push(props.correct);
+    const shuffledArray = array.sort((a, b) => 0.5 - Math.random());
+    return shuffledArray;
+  }
+
+  const elements = shuffleArray();
+  const answerElement = elements.map((element) => {
+    return <button className="ques__option">{element}</button>;
   });
-  console.log(incorrect_answers);
 
   return (
     <div className="ques">
       <div className="ques-container">
         <h2 className="ques__title">{props.question}</h2>
-        <button className="ques__answer">{props.correct}</button>
-        {incorrect_answers}
+        {answerElement}
       </div>
     </div>
   );

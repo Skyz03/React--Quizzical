@@ -11,9 +11,13 @@ const Ques = (props) => {
     return shuffledArray;
   }
 
+  console.log(props.hold);
+
   const elements = shuffleArray();
   const answerElement = elements.map((element) => {
-    return <button className="ques__option">{element}</button>;
+    return (
+      <button className={props.hold ? "ques__option" : ""}>{element}</button>
+    );
   });
 
   return (

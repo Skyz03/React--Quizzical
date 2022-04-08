@@ -1,6 +1,8 @@
 import React from "react";
 import "./App.scss";
 import Ques from "./components/Ques";
+import { nanoid } from "nanoid";
+
 function App() {
   const [question, setQuestion] = React.useState([]);
   const [screen, setScreen] = React.useState(false);
@@ -19,9 +21,19 @@ function App() {
   }, []);
 
   console.log(question);
+  function holdQuestion(id) {
+    setQuestion((oldQuestion) => {
+      oldQuestion.map((ques) => {
+        return ques.id === id ? (ques.hold = true) : ques;
+      });
+    });
+  }
+
   const questionElement = question.map((ques) => {
     return (
       <Ques
+        hold={ques.hold}
+        onClick={() => holdQuestion(ques.id)}
         question={ques.question}
         correct={ques.correct_answer}
         incorrect={ques.incorrect_answers}

@@ -3,15 +3,14 @@ import React from "react";
 const Ques = (props) => {
   function shuffleArray() {
     let array = [];
+
     props.incorrect.map((incorrect) => {
-      array.push(incorrect);
+      return array.push(incorrect);
     });
     array.push(props.correct);
     const shuffledArray = array.sort((a, b) => 0.5 - Math.random());
     return shuffledArray;
   }
-
-  console.log(props.hold);
 
   const elements = shuffleArray();
   const answerElement = elements.map((element) => {

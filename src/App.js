@@ -11,16 +11,26 @@ function App() {
     fetch("https://opentdb.com/api.php?amount=10&category=18&type=multiple")
       .then((res) => res.json())
       .then((data) => {
-        let question = data.results;
-        setQuestion(question);
+        let questions = data.results.map((result) => {
+          return {
+            key: nanoid(),
+            question: result.question,
+            correct: result.correct_answer,
+            incorrect: result.incorrect_answers,
+            id: nanoid(),
+            hold: false,
+          };
+        });
+        setQuestion(questions);
       });
   };
+
+  console.log(question);
 
   React.useEffect(() => {
     fetchQuestion();
   }, []);
 
-  console.log(question);
   function holdQuestion(id) {
     setQuestion((oldQuestion) => {
       oldQuestion.map((ques) => {
@@ -32,11 +42,12 @@ function App() {
   const questionElement = question.map((ques) => {
     return (
       <Ques
+        key={ques.id}
         hold={ques.hold}
         onClick={() => holdQuestion(ques.id)}
         question={ques.question}
-        correct={ques.correct_answer}
-        incorrect={ques.incorrect_answers}
+        correct={ques.correct}
+        incorrect={ques.incorrect}
       />
     );
   });

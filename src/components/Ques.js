@@ -1,5 +1,6 @@
 import React from "react";
 import Btn from "./Btn";
+import { nanoid } from "nanoid";
 
 const Ques = (props) => {
   function shuffleArray() {
@@ -18,7 +19,14 @@ const Ques = (props) => {
 
   const elements = shuffleArray();
   const answerElement = elements.map((element) => {
-    return <Btn element={element} hold={props.hold} />;
+    return (
+      <Btn
+        id={nanoid()}
+        correct={props.correct}
+        element={element}
+        hold={props.hold}
+      />
+    );
   });
 
   return (

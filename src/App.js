@@ -13,7 +13,6 @@ function App() {
       .then((data) => {
         let questions = data.results.map((result) => {
           return {
-            key: nanoid(),
             question: result.question,
             correct: result.correct_answer,
             incorrect: result.incorrect_answers,

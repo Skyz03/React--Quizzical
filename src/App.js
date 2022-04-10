@@ -47,6 +47,7 @@ function App() {
         question={ques.question}
         correct={ques.correct}
         incorrect={ques.incorrect}
+        id={ques.id}
       />
     );
   });

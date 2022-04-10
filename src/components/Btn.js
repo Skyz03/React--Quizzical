@@ -9,8 +9,6 @@ const Btn = (props) => {
       return (oldHold = !oldHold);
     });
   }
-  console.log(props.correct);
-
   return (
     <button onClick={idIdentifier} className={hold ? "button__clicked" : ""}>
       {props.element}
@@ -19,3 +17,6 @@ const Btn = (props) => {
 };
 
 export default Btn;
+
+// coreect answer check here
+// check props.element === props.correct

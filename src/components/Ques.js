@@ -16,9 +16,12 @@ const Ques = (props) => {
     const shuffledArray = array.sort((a, b) => 0.5 - Math.random());
     return shuffledArray;
   }
+  // console.log(props.correct);
 
   const elements = shuffleArray();
   const answerElement = elements.map((element) => {
+    // console.log(element);
+
     return (
       <Btn
         id={nanoid()}

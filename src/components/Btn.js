@@ -9,6 +9,15 @@ const Btn = (props) => {
       return (oldHold = !oldHold);
     });
   }
+
+  React.useEffect(() => {
+    if (hold === true) {
+      if (props.element === props.correct) {
+        console.log("correct");
+      }
+    }
+  }, [hold]);
+
   return (
     <button onClick={idIdentifier} className={hold ? "button__clicked" : ""}>
       {props.element}

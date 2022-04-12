@@ -1,6 +1,7 @@
 import React from "react";
 import Btn from "./Btn";
 import { nanoid } from "nanoid";
+import he from "he";
 
 const Ques = (props) => {
   function shuffleArray() {
@@ -35,7 +36,7 @@ const Ques = (props) => {
   return (
     <div className="ques">
       <div className="ques-container">
-        <h2 className="ques__title">{props.question}</h2>
+        <h2 className="ques__title">{he.decode(props.question)}</h2>
         {answerElement}
       </div>
     </div>
